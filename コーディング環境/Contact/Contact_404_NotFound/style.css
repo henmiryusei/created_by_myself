@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+/*
+  404エラーページのカスタムCSS
+
+  このファイルは、HTMLで適用されているTailwind CSSクラスを補完し、
+  必要に応じて追加のスタイリングや特定の要素の調整を行います。
+*/
+
+body {
+    /* HTMLでInterフォントを指定していますが、ここでも念のため指定 */
+    font-family: 'Inter', sans-serif;
+    /* 背景色はTailwindクラスで指定済みですが、必要に応じて調整 */
+    background-color: #f3f4f6; /* bg-gray-100 */
+    line-height: 1.6; /* 行間を調整 */
+    color: #374151; /* text-gray-700 系の色を基本に */
+}
+
+/* ヘッダー、メインコンテンツ、フッターの基本的なレイアウトとスタイリングは
+   HTML内のTailwind CSSクラスによって定義されています。
+   より詳細な調整が必要な場合は、以下のセレクタを使用してスタイルを追記してください。 */
+
+/* 例: ヘッダーのロゴと会社名の間のスペースを調整 */
+/*
+header .flex.items-center img {
+    margin-right: 0.75rem; // Tailwindのmr-3 (0.75rem) と同じですが、調整が必要なら
+}
+*/
+
+/* 例: メインコンテンツのエラー番号 (h1) の色を微調整 */
+/*
+main h1 {
+    color: #0d9488; // Tailwindのtext-teal-500 (#0d9488) と同じですが、調整が必要なら
+}
+*/
+
+/* TOPへ戻るボタンのホバー時の背景色アニメーション */
+/* HTMLでTailwindのtransitionクラスとhover:bg-teal-700クラスを適用していますが、
+   CSSで明示的に指定することも可能です。 */
+/*
+main a.inline-flex {
+    transition: background-color 0.15s ease-in-out;
+}
+
+main a.inline-flex:hover {
+    background-color: #0f766e; // hover:bg-teal-700
+}
+*/
+
+
+/* フッターのスタイリング */
+footer {
+    /* 背景色、テキスト色、パディング、マージンはTailwindで指定済み */
+    background-color: #1f2937; /* bg-gray-800 */
+    color: #d1d5db; /* text-gray-300 */
+}
+
+/* フッター内のリンクのホバー時の色アニメーション */
+footer a {
+    transition: color 0.15s ease-in-out;
+}
+
+footer a:hover {
+    color: #ffffff; /* hover:text-white */
+}
+
+/* フッターのロゴと会社情報のセクション */
+footer .flex.flex-col.items-center.md\:items-start {
+    /* flexboxの配置やマージンはTailwindで指定済み */
+}
+
+/* フッターのナビゲーションと著作権表示のセクション */
+footer .flex.flex-col.items-center.md\:items-end {
+     /* flexboxの配置やマージンはTailwindで指定済み */
+}
+
+/* レスポンシブデザインの調整が必要な場合は @media クエリを追加 */
+/* 例:
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column; // md:flex-row を上書き
+        align-items: center; // md:items-start を上書き
+    }
+
+    footer .flex.flex-col.items-center.md\:items-start,
+    footer .flex.flex-col.items-center.md\:items-end {
+        align-items: center; // モバイルで中央寄せ
+        margin-bottom: 1.5rem; // 要素間のスペース
+    }
+
+    footer .flex.flex-col.items-center.md\:items-end {
+        margin-bottom: 0; // 最後の要素にはマージンなし
+    }
+}
+*/

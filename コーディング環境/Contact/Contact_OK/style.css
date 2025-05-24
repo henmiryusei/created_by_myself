@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/*
+  お問い合わせ完了画面のカスタムCSS
+
+  Tailwind CSS をベースに、必要に応じて追加のスタイリングを行います。
+*/
+
+body {
+    /* HTMLでInterフォントを指定していますが、ここでも念のため指定 */
+    font-family: 'Inter', sans-serif;
+    /* 背景色はTailwindクラスで指定済みですが、必要に応じて調整 */
+    background-color: #f3f4f6; /* bg-gray-100 */
+    line-height: 1.6; /* 行間を調整 */
+    color: #374151; /* text-gray-700 系の色を基本に */
+}
+
+/* ヘッダー、パンくずリスト、フッターのスタイリングはTailwindで十分ですが、必要ならここに追記 */
+
+/* メインコンテンツエリアのスタイリング */
+main {
+    /* flex justify-center items-center min-h-[calc(100vh-250px)] はHTMLで指定済み */
+}
+
+/* コンテンツボックス (感謝メッセージを含む部分) のスタイリング */
+main .bg-white {
+    /* 背景色、パディング、角丸、影、テキスト中央寄せ、最大幅、幅はTailwindで指定済み */
+}
+
+/* 感謝メッセージの見出し (h1) のスタイリング */
+main h1 {
+    /* フォントサイズ、太さ、色、マージンはTailwindで指定済み */
+}
+
+/* 説明テキスト (p) のスタイリング */
+main p {
+    /* テキスト色、マージンはTailwindで指定済み */
+}
+
+/* TOPへ戻るボタンのスタイリング */
+main a.inline-flex {
+    /* 背景色、ホバー時の背景色、テキスト色、フォントの太さ、パディング、角丸、
+       フォーカス時のアウトラインと影、flexアイテムとしての配置はTailwindで指定済み */
+    transition: background-color 0.15s ease-in-out; /* ホバー時のアニメーション */
+}
+
+main a.inline-flex:hover {
+    background-color: #0f766e; /* hover:bg-teal-700 */
+}
+
+main a.inline-flex svg {
+    /* ボタン内のSVGアイコンのスタイリング */
+    /* transform rotate-180 はTOPへ戻る矢印の向きを調整するためにHTMLで指定 */
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+
+/* レスポンシブデザインの調整が必要な場合は @media クエリを追加 */
+/* 例:
+@media (max-width: 768px) {
+    main .bg-white {
+        padding: 1.5rem; // md:p-8 だったものを小さくするなど
+    }
+}
+*/

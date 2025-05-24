@@ -1,0 +1,266 @@
+@charset "UTF-8";
+
+/* 全体のスタイル */
+body {
+    font-family: 'Arial', sans-serif; /* フォントファミリーを指定 */
+    margin: 0; /* デフォルトのマージンをリセット */
+    padding: 0; /* デフォルトのパディングをリセット */
+    line-height: 1.6; /* 行の高さを設定 */
+    color: #333; /* 基本の文字色 */
+}
+
+.container {
+    width: 90%; /* コンテンツの幅 */
+    max-width: 1200px; /* 最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0 20px; /* 左右のパディング */
+}
+
+/* ヘッダーのスタイル */
+header {
+    background-color: #fff; /* 背景色 */
+    border-bottom: 1px solid #eee; /* 下線 */
+    padding: 10px 0; /* 上下のパディング */
+}
+
+header .container {
+    display: flex; /* Flexboxを使って要素を横並びに */
+    justify-content: space-between; /* 要素間にスペースを均等に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+}
+
+header .logo img {
+    height: 50px; /* ロゴの高さ */
+    display: block; /* インライン要素からブロック要素に */
+}
+
+header nav ul {
+    list-style: none; /* リストのマーカーを削除 */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexboxを使ってリストアイテムを横並びに */
+}
+
+header nav ul li {
+    margin-left: 20px; /* リストアイテム間の左マージン */
+}
+
+header nav ul li a {
+    text-decoration: none; /* テキストの下線を削除 */
+    color: #333; /* リンクの色 */
+    font-weight: bold; /* フォントを太く */
+    padding: 5px 10px; /* リンクのパディング */
+    transition: color 0.3s ease; /* ホバー時の色の変化を滑らかに */
+}
+
+header nav ul li a:hover {
+    color: #007bff; /* ホバー時の色 */
+}
+
+/* パンくずリストのスタイル */
+.breadcrumbs {
+    background-color: #f8f8f8; /* 背景色 */
+    padding: 10px 0; /* 上下のパディング */
+    font-size: 0.9em; /* フォントサイズを小さく */
+    color: #666; /* 文字色 */
+}
+
+.breadcrumbs a {
+    text-decoration: none; /* 下線を削除 */
+    color: #666; /* リンクの色 */
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+/* メインコンテンツのスタイル */
+main {
+    padding: 40px 0; /* 上下のパディング */
+}
+
+/* 会社情報セクションのスタイル */
+.company-info-section {
+    background-color: #fff; /* 背景色 */
+    padding: 30px; /* 内側のパディング */
+    border-radius: 8px; /* 角を丸く */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影 */
+}
+
+.company-info-section .button-group {
+    display: flex; /* ボタンを横並びに */
+    justify-content: center; /* 中央寄せ */
+    margin-bottom: 30px; /* 下のマージン */
+}
+
+.company-info-section .button-group button {
+    background-color: #eee; /* ボタンの背景色 */
+    border: 1px solid #ccc; /* ボタンの枠線 */
+    padding: 10px 20px; /* ボタンの内側のパディング */
+    margin: 0 5px; /* ボタン間のマージン */
+    cursor: pointer; /* カーソルをポインターに */
+    font-size: 1em; /* フォントサイズ */
+    transition: background-color 0.3s ease; /* ホバー時の変化を滑らかに */
+}
+
+.company-info-section .button-group button:hover {
+    background-color: #ddd; /* ホバー時の背景色 */
+}
+
+.company-info-section .button-group button.active {
+    background-color: #007bff; /* アクティブなボタンの背景色 */
+    color: #fff; /* アクティブなボタンの文字色 */
+    border-color: #007bff; /* アクティブなボタンの枠線色 */
+}
+
+.company-info-section h2 {
+    text-align: center; /* 見出しを中央寄せ */
+    margin-bottom: 30px; /* 下のマージン */
+    color: #333; /* 見出しの色 */
+}
+
+.company-details table {
+    width: 100%; /* テーブルの幅を100%に */
+    border-collapse: collapse; /* セルの境界線を重ねる */
+    margin-bottom: 30px; /* 下のマージン */
+}
+
+.company-details th,
+.company-details td {
+    border: 1px solid #ddd; /* セルの枠線 */
+    padding: 12px; /* セルの内側のパディング */
+    text-align: left; /* テキストを左寄せ */
+}
+
+.company-details th {
+    background-color: #f2f2f2; /* 見出しセルの背景色 */
+    font-weight: bold; /* フォントを太く */
+    width: 150px; /* 見出しセルの幅を固定 */
+}
+
+.company-details td {
+    white-space: pre-wrap; /* 改行を有効にする */
+}
+
+.top-button {
+    text-align: center; /* ボタンを中央寄せ */
+    margin-top: 30px; /* 上のマージン */
+}
+
+.top-button .button {
+    display: inline-block; /* インラインブロック要素に */
+    background-color: #007bff; /* ボタンの背景色 */
+    color: #fff; /* ボタンの文字色 */
+    text-decoration: none; /* 下線を削除 */
+    padding: 10px 20px; /* 内側のパディング */
+    border-radius: 5px; /* 角を丸く */
+    transition: background-color 0.3s ease; /* ホバー時の変化を滑らかに */
+}
+
+.top-button .button:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: #333; /* 背景色 */
+    color: #fff; /* 文字色 */
+    padding: 30px 0 10px 0; /* 上下と下のパディング */
+}
+
+footer .footer-content {
+    display: flex; /* Flexboxを使って要素を横並びに */
+    justify-content: space-between; /* 要素間にスペースを均等に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    margin-bottom: 20px; /* 下のマージン */
+    flex-wrap: wrap; /* 要素が収まらない場合に折り返す */
+}
+
+footer .footer-logo img {
+    height: 60px; /* ロゴの高さ */
+    display: block;
+}
+
+footer .footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* リストアイテムを横並びに */
+    flex-wrap: wrap; /* 要素が収まらない場合に折り返す */
+    justify-content: center; /* 中央寄せ（折り返した場合） */
+}
+
+footer .footer-nav ul li {
+    margin: 0 10px; /* リストアイテム間のマージン */
+}
+
+footer .footer-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+footer .footer-nav ul li a:hover {
+    color: #007bff;
+}
+
+footer .footer-bottom {
+    text-align: center; /* 中央寄せ */
+    font-size: 0.9em; /* フォントサイズを小さく */
+    border-top: 1px solid #555; /* 上線 */
+    padding-top: 10px; /* 上のパディング */
+}
+
+footer .footer-bottom p {
+    margin: 5px 0; /* 段落間のマージン */
+}
+
+footer .footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* レスポンシブ対応（必要に応じてブレークポイントを追加・調整） */
+@media (max-width: 768px) {
+    header .container,
+    footer .footer-content {
+        flex-direction: column; /* 縦並びに変更 */
+        text-align: center; /* テキストを中央寄せ */
+    }
+
+    header .logo,
+    footer .footer-logo {
+        margin-bottom: 10px; /* 下にマージン */
+    }
+
+    header nav ul,
+    footer .footer-nav ul {
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: center; /* 中央寄せ */
+    }
+
+    header nav ul li,
+    footer .footer-nav ul li {
+        margin: 5px 0; /* 上下のマージン */
+    }
+
+    .company-info-section .button-group {
+        flex-direction: column; /* ボタンを縦並びに */
+        align-items: center; /* 中央寄せ */
+    }
+
+    .company-info-section .button-group button {
+        margin: 5px 0; /* 上下のマージン */
+        width: 80%; /* 幅を調整 */
+        max-width: 300px; /* 最大幅を設定 */
+    }
+
+    .company-details th {
+        width: 100px; /* 見出しセルの幅を調整 */
+    }
+}

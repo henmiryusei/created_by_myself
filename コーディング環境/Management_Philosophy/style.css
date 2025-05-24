@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/* グラデーションアニメーションのスタイル */
+/* @keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff7e5f);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 3s ease infinite;
+} */
+
+
+/* グラデーションテキスト */
+.text-progress {
+    position: relative;
+    width: 100%;
+    height: auto;
+    line-height: 150%;
+    margin: 0 auto;
+    font-size: 32px;
+    text-align: center;
+    color: #333;
+    overflow: hidden;
+}
+.text-progress.text--large {
+    font-size: 48px;
+    margin-top: 80px;
+}
+.text-progress::after {
+    content: attr(data-txt);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #92D1EB, #ADE1DA, #CCEEB3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    /* ← ここを clip-path に置き換え！ */
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1.5s ease;
+}
+
+.text-progress:hover::after {
+    clip-path: inset(0 0 0 0);
+}
+
+
+/* 固定背景のスタイル */
+.fixed-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mission-bg {
+    background-image: url('../mission 1.png'); /* 仮の背景画像URL */
+}
+
+.vision-bg {
+    background-image: url('../vision 1.png'); /* 仮の背景画像URL */
+}
+
+.values-bg {
+     background-image: url('../value2 1.png'); /* 仮の背景画像URL */
+}
+
+ .culture-bg {
+     background-image: url('../culture2 1'); /* 仮の背景画像URL */
+}
+
+/* Tailwind CSSはHTML側でCDNを読み込んでいるため、ここではカスタムスタイルのみ記述 */

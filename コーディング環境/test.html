@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スクロール切り替え</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f3f3f3;
+    }
+
+    .spacer {
+      height: 100vh;
+    }
+
+    section.top {
+      height: 100vh;
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top_title {
+      position: absolute;
+      opacity: 0;
+      transform: scale(0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .title1 {
+      background-color: rgb(138, 219, 219);
+      height: 100vh;
+      width: 100%;
+    }
+
+    .title2 {
+      background-color: rgb(230, 230, 177);
+      height: 100vh;
+      width: 100%;
+    }
+
+    .title3 {
+      background-color: rgb(214, 149, 112);
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spacer">↓ スクロールして開始</div>
+
+  <section class="top section1">
+    <div class="top_title title1">ようこそ</div>
+    <div class="top_title title2">こんにちは</div>
+    <div class="top_title title3">こんばんは</div>
+  </section>
+
+  <div class="spacer">↑ 終了</div>
+
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".section1",
+        start: "top top",
+        end: "+=10000", // スクロール距離を増加（3つの表示分）
+        scrub: true,
+        pin: true,
+      },
+    });
+
+    tl.fromTo(".title1",
+      { opacity: 0, scale: 0.2 },
+      { opacity: 1, scale: 1, duration: 1 }
+    )
+    .to(".title1", {}, "+=1.5") // ← 表示時間
+    .to(".title1",
+      { opacity: 0, scale: 0.8, duration: 1 }
+    )
+
+    .fromTo(".title2",
+      { opacity: 0, scale: 0.2 },
+      { opacity: 1, scale: 1, duration: 1 }
+    )
+    .to(".title2", {}, "+=1.5")
+    .to(".title2",
+      { opacity: 0, scale: 0.8, duration: 1 }
+    )
+
+    .fromTo(".title3",
+      { opacity: 0, scale: 0.2 },
+      { opacity: 1, scale: 1, duration: 1 }
+    )
+    .to(".title3", {}, "+=1.5");
+  </script>
+
+</body>
+</html>

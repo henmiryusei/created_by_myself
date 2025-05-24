@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+/* style.css または news_detail.css */
+
+/* 基本的なbodyスタイルの調整（Tailwindで設定していますが、必要に応じてここで上書き・追加） */
+body {
+    line-height: 1.6; /* 行の高さを調整 */
+    color: #333; /* 基本的なテキストカラー */
+    font-family: 'Inter', sans-serif; /* HTMLで指定していますが、ここでも指定 */
+    background-color: #f3f4f6; /* Tailwindのbg-gray-100と同じ */
+}
+
+/* コンテナの最大幅を調整（Tailwindのmx-autoと組み合わせて中央寄せ） */
+.container {
+    max-width: 1200px; /* コンテンツの最大幅 */
+}
+
+/* ヘッダーのスタイル（お知らせ一覧ページと共通） */
+header {
+    background-color: #fff; /* Tailwindのbg-whiteと同じ */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075); /* Tailwindのshadow-mdと同じような影 */
+}
+
+header .container {
+    padding-top: 1rem; /* Tailwindのpy-4と同じ */
+    padding-bottom: 1rem; /* Tailwindのpy-4と同じ */
+    padding-left: 1rem; /* Tailwindのpx-4と同じ */
+    padding-right: 1rem; /* Tailwindのpx-4と同じ */
+    display: flex; /* Tailwindのflexと同じ */
+    justify-content: space-between; /* Tailwindのjustify-betweenと同じ */
+    align-items: center; /* Tailwindのitems-centerと同じ */
+}
+
+header .flex.items-center {
+    display: flex; /* Tailwindのflexと同じ */
+    align-items: center; /* Tailwindのitems-centerと同じ */
+}
+
+header img {
+    height: 2.5rem; /* Tailwindのh-10と同じ */
+    margin-right: 0.75rem; /* Tailwindのmr-3と同じ */
+}
+
+header span {
+    font-size: 1.125rem; /* Tailwindのtext-lgと同じ */
+    font-weight: 700; /* Tailwindのfont-boldと同じ */
+    color: #1f2937; /* Tailwindのtext-gray-800と同じ */
+}
+
+header nav ul {
+    display: flex; /* Tailwindのflexと同じ */
+    space-x: 1.5rem; /* Tailwindのspace-x-6と同じ */
+}
+
+header nav ul li a {
+    color: #4b5563; /* Tailwindのtext-gray-600と同じ */
+    transition: color 0.2s ease-in-out; /* ホバー時のトランジション */
+}
+
+header nav ul li a:hover {
+    color: #111827; /* Tailwindのhover:text-gray-900と同じ */
+}
+
+/* パンくずリストのスタイル */
+.container.py-3.text-sm.text-gray-600 {
+    padding-top: 0.75rem; /* Tailwindのpy-3と同じ */
+    padding-bottom: 0.75rem; /* Tailwindのpy-3と同じ */
+    font-size: 0.875rem; /* Tailwindのtext-smと同じ */
+    color: #4b5563; /* Tailwindのtext-gray-600と同じ */
+}
+
+/* メインコンテンツエリアのスタイル */
+main.container.mx-auto.px-4.py-8.bg-white.shadow-md.rounded-md {
+    padding: 2rem; /* Tailwindのpx-4 py-8を合わせたようなパディング */
+    background-color: #fff; /* Tailwindのbg-whiteと同じ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwindのshadow-mdと同じような影 */
+    border-radius: 0.375rem; /* Tailwindのrounded-mdと同じ */
+}
+
+/* 記事内のスタイル */
+article .text-blue-600 {
+    color: #2563eb; /* Tailwindのtext-blue-600と同じ */
+    font-size: 0.875rem; /* Tailwindのtext-smと同じ */
+    font-weight: 600; /* Tailwindのfont-semiboldと同じ */
+    margin-bottom: 0.5rem; /* Tailwindのmb-2と同じ */
+}
+
+article h1 {
+    font-size: 1.5rem; /* Tailwindのtext-2xlと同じ */
+    font-weight: 700; /* Tailwindのfont-boldと同じ */
+    color: #1f2937; /* Tailwindのtext-gray-800と同じ */
+    margin-bottom: 1rem; /* Tailwindのmb-4と同じ */
+}
+
+article .text-gray-600.text-sm.mb-6 {
+    color: #4b5563; /* Tailwindのtext-gray-600と同じ */
+    font-size: 0.875rem; /* Tailwindのtext-smと同じ */
+    margin-bottom: 1.5rem; /* Tailwindのmb-6と同じ */
+}
+
+/* 本文のスタイル（Tailwind Prose プラグインのスタイルを補完） */
+.prose p {
+    margin-bottom: 1em; /* 段落の下に余白 */
+    /* 必要に応じて、ここで本文のフォントサイズ、行間などを調整 */
+}
+
+/* 一覧へ戻るボタンのスタイル */
+.flex.justify-center.mt-8 a {
+    display: flex; /* Tailwindのflexと同じ */
+    align-items: center; /* Tailwindのitems-centerと同じ */
+    padding: 0.75rem 1.5rem; /* Tailwindのpx-6 py-3と同じ */
+    background-color: #1d4ed8; /* Tailwindのbg-blue-700と同じ */
+    color: #fff; /* Tailwindのtext-whiteと同じ */
+    font-weight: 600; /* Tailwindのfont-semiboldと同じ */
+    border-radius: 0.375rem; /* Tailwindのrounded-mdと同じ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwindのshadow-mdと同じような影 */
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* ホバー時のトランジション */
+}
+
+.flex.justify-center.mt-8 a:hover {
+    background-color: #1e40af; /* Tailwindのhover:bg-blue-800と同じ */
+}
+
+.flex.justify-center.mt-8 a svg {
+    width: 1rem; /* Tailwindのw-4と同じ */
+    height: 1rem; /* Tailwindのh-4と同じ */
+    margin-right: 0.5rem; /* Tailwindのmr-2と同じ */
+}
+
+
+/* フッターのスタイル（お知らせ一覧ページと共通） */
+footer {
+    background-color: #1f2937; /* Tailwindのbg-gray-800と同じ */
+    color: #d1d5db; /* Tailwindのtext-gray-300と同じ */
+    padding-top: 2rem; /* Tailwindのpy-8と同じ */
+    padding-bottom: 2rem; /* Tailwindのpy-8と同じ */
+}
+
+footer .container {
+    padding-left: 1rem; /* Tailwindのpx-4と同じ */
+    padding-right: 1rem; /* Tailwindのpx-4と同じ */
+    display: flex; /* Tailwindのflexと同じ */
+    justify-content: space-between; /* Tailwindのjustify-betweenと同じ */
+    align-items: center; /* Tailwindのitems-centerと同じ */
+}
+
+footer .mb-4.md\:mb-0 {
+    margin-bottom: 1rem; /* Tailwindのmb-4と同じ */
+    /* mdブレークポイント以上ではmb-0 */
+}
+
+footer .text-center.md\:text-left {
+     text-align: center; /* Tailwindのtext-centerと同じ */
+     /* mdブレークポイント以上ではtext-left */
+}
+
+footer img {
+    height: 2.5rem; /* Tailwindのh-10と同じ */
+    margin-bottom: 0.5rem; /* Tailwindのmb-2と同じ */
+    margin-left: auto; /* Tailwindのmx-autoと同じ */
+    margin-right: auto; /* Tailwindのmx-autoと同じ */
+    /* mdブレークポイント以上ではmx-0 */
+}
+
+footer .text-sm {
+    font-size: 0.875rem; /* Tailwindのtext-smと同じ */
+}
+
+footer nav ul {
+    display: flex; /* Tailwindのflexと同じ */
+    flex-wrap: wrap; /* Tailwindのflex-wrapと同じ */
+    justify-content: center; /* Tailwindのjustify-centerと同じ */
+    /*space-x: 1rem; /* Tailwindのspace-x-4と同じ */
+    /* mdブレークポイント以上ではjustify-start, space-x-6 */
+}
+
+footer nav ul li a {
+    transition: color 0.2s ease-in-out; /* ホバー時のトランジション */
+}
+
+footer nav ul li a:hover {
+    color: #fff; /* Tailwindのhover:text-whiteと同じ */
+}
+
+/* レスポンシブデザインの調整（必要に応じてブレークポイントごとにスタイルを調整） */
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column; /* 画面が狭い場合は縦並びに */
+        text-align: center; /* テキストを中央寄せ */
+    }
+
+    footer nav ul {
+        flex-direction: column; /* ナビゲーションリンクを縦並びに */
+        align-items: center; /* 中央寄せ */
+        /*space-x: 0; /* 横方向のスペースをなくす */
+        margin-top: 1rem; /* 上に余白を追加 */
+    }
+
+    footer nav ul li {
+        margin-bottom: 0.5rem; /* 下に余白を追加 */
+    }
+}

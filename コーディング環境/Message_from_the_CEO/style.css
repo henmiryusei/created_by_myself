@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+/* style.css */
+
+/* 基本的なリセットとフォント設定 */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* フォントは適宜変更してください */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+.container {
+    max-width: 1000px; /* コンテンツの最大幅 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0 20px; /* 左右の余白 */
+}
+
+/* ヘッダーのスタイル */
+header {
+    background-color: #fff; /* 背景色 */
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* ロゴとナビゲーションを左右に配置 */
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* ロゴの高さ */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* ナビゲーション項目を横に並べる */
+}
+
+header nav ul li {
+    margin-left: 20px; /* 項目間の余白 */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #007bff; /* ホバー時の色 */
+}
+
+/* パンくずリストのスタイル */
+.breadcrumb {
+    background-color: #eee;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #555;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* メインコンテンツのスタイル */
+main {
+    padding: 20px 0;
+}
+
+/* タブのスタイル */
+.tabs {
+    display: flex;
+    justify-content: center; /* タブボタンを中央に配置 */
+    margin-bottom: 30px;
+}
+
+.tab-button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-button.active {
+    background-color: #007bff; /* アクティブなタブの色 */
+    color: #fff;
+    border-color: #007bff;
+}
+
+.tab-button:not(:last-child) {
+    margin-right: 5px; /* ボタン間の余白 */
+}
+
+/* セクションタイトルのスタイル */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2em;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50px; /* 下線の幅 */
+    height: 3px; /* 下線の太さ */
+    background-color: #007bff; /* 下線の色 */
+}
+
+/* 代表挨拶セクションのスタイル */
+.greeting-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.greeting-item.reverse {
+    flex-direction: row-reverse; /* テキストと画像を左右反転 */
+}
+
+.greeting-item .text-content {
+    flex: 1; /* 利用可能なスペースを埋める */
+    padding: 0 20px;
+}
+
+.greeting-item .image-content {
+    flex-shrink: 0; /* 縮小しない */
+    width: 300px; /* 画像の幅 */
+    text-align: center;
+}
+
+.greeting-item .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* 画像の角を丸くする */
+}
+
+.greeting-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.greeting-item p {
+    margin-bottom: 15px;
+}
+
+.greeting-item .signature {
+    text-align: right;
+    font-style: italic;
+    margin-top: 20px;
+    color: #555;
+}
+
+/* TOPに戻るボタンのスタイル */
+.back-to-top {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-to-top a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top a:hover {
+    background-color: #0056b3;
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* 要素を折り返す */
+}
+
+.footer-logo img {
+    height: 40px; /* フッターロゴの高さ */
+}
+
+.footer-info {
+    margin-top: 10px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav ul li {
+    margin: 5px 10px;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+    color: #007bff;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+}
+
+.copyright a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+/* レスポンシブ対応（簡易的な例） */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* ヘッダー項目を縦に並べる */
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .greeting-item,
+    .greeting-item.reverse {
+        flex-direction: column; /* 代表挨拶セクションを縦に並べる */
+        text-align: center;
+    }
+
+    .greeting-item .text-content {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .greeting-item .image-content {
+        width: 80%; /* 画像の幅を調整 */
+        margin: 0 auto;
+    }
+
+    .signature {
+        text-align: center !important; /* 中央寄せ */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-nav ul {
+        margin-top: 10px;
+    }
+}

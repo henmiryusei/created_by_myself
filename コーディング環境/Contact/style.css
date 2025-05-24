@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+/*
+  お問い合わせフォームのカスタムCSS
+
+  Tailwind CSS をベースに、より詳細なスタイリングや
+  特定の要素に対する調整を行います。
+*/
+
+body {
+    /* HTMLでInterフォントを指定していますが、ここでも念のため指定 */
+    font-family: 'Inter', sans-serif;
+    /* 背景色はTailwindクラスで指定済みですが、必要に応じて調整 */
+    background-color: #f3f4f6; /* bg-gray-100 */
+    line-height: 1.6; /* 行間を調整 */
+    color: #374151; /* text-gray-700 系の色を基本に */
+}
+
+/* ヘッダーのスタイリングはTailwindで十分ですが、必要ならここに追記 */
+header {
+    background-color: #ffffff; /* bg-white */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-sm */
+}
+
+/* パンくずリストのスタイリングはTailwindで十分ですが、必要ならここに追記 */
+.container > span {
+    /* パンくずリストの区切り文字などのスタイル調整 */
+    margin: 0 0.5rem;
+}
+
+/* メインコンテンツエリアのスタイリング */
+main .container {
+    /* コンテナの中央寄せと最大幅はTailwindで指定済み */
+}
+
+/* フォームコンテナのスタイリング */
+main .bg-white {
+    /* 背景色、パディング、角丸、影はTailwindで指定済み */
+}
+
+/* セクションタイトルの下線 */
+h1 span {
+    /* 下線の色と太さはTailwindクラス (border-b-2 border-teal-500) で指定済み */
+    /* 必要に応じてパディングなどを調整 */
+    padding-bottom: 0.25rem; /* pb-1 */
+}
+
+/* フォームラベルのスタイリング */
+label {
+    /* フォントの太さや色はTailwindクラスで指定済み */
+    display: block; /* ラベルをブロック要素に */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* 必須項目のアスタリスクの色 */
+label span.text-red-600 {
+    color: #dc2626; /* text-red-600 */
+}
+
+/* 入力フィールド (input, textarea) のスタイリング */
+input[type="text"]:valid,
+input[type="tel"]:valid,
+input[type="email"]:valid,
+textarea {
+    /* 影、ボーダー、角丸、幅、パディング、テキスト色はTailwindで指定済み */
+    /* focus時のアウトラインと影もTailwindで指定済み */
+    appearance: none; /* ブラウザのデフォルトスタイルをリセット */
+    border-color: #d1d5db; /* border */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* フォーカス時のアニメーション */
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #0d9488; /* フォーカス時のボーダー色 (teal-600) */
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.3); /* フォーカス時の影 (teal-600の透明度付き) */
+    outline: none; /* デフォルトのアウトラインを無効に */
+}
+
+/* プライバシーポリシー同意チェックボックスのスタイリング */
+input[type="checkbox"] {
+    /* 必要に応じてサイズや色を調整 */
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+/* 入力内容を確認するボタンのスタイリング */
+button[type="submit"] {
+    /* 背景色、ホバー時の背景色、テキスト色、フォントの太さ、パディング、角丸はTailwindで指定済み */
+    /* フォーカス時のアウトラインと影もTailwindで指定済み */
+    display: inline-flex; /* アイコンとテキストを横並びに */
+    align-items: center; /* 垂直方向中央揃え */
+    background-color: #047857; /* bg-teal-600 */
+    transition: background-color 0.15s ease-in-out; /* ホバー時のアニメーション */
+}
+
+button[type="submit"]:hover {
+    background-color: #0f766e; /* hover:bg-teal-700 */
+}
+
+button[type="submit"] svg {
+    /* ボタン内のSVGアイコンのスタイリング */
+    margin-left: 0.5rem; /* ml-2 */
+}
+
+input[type=text]:required,
+input[type=email]:required,
+input[type=email]:invalid,
+textarea:required {
+    color: #374151;
+    border-color: #c20c33;
+    background-color: #ffd9e1;
+}
+
+/* フッターのスタイリング */
+footer {
+    background-color: #1f2937; /* bg-gray-800 */
+    color: #d1d5db; /* text-gray-300 */
+}
+
+footer a {
+    color: #d1d5db; /* text-gray-300 */
+    transition: color 0.15s ease-in-out; /* ホバー時のアニメーション */
+}
+
+footer a:hover {
+    color: #ffffff; /* hover:text-white */
+}
+
+.footer__logo {
+    margin-bottom: 20px;
+}
+
+.footer__logo img {
+    height: auto;
+    max-height: 40px;
+    width: auto;
+}
+
+
+/* レスポンシブデザインの調整が必要な場合は @media クエリを追加 */
+/* 例:
+@media (max-width: 768px) {
+    main .bg-white {
+        padding: 1.5rem; // md:p-8 だったものを小さくするなど
+    }
+}
+*/

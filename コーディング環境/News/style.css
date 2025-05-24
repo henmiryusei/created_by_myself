@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+/* style.css */
+
+/* 基本的なbodyスタイルの調整（Tailwindで設定していますが、必要に応じてここで上書き・追加） */
+body {
+    line-height: 1.6; /* 行の高さを調整 */
+    color: #333; /* 基本的なテキストカラー */
+}
+
+/* コンテナの最大幅を調整（Tailwindのmx-autoと組み合わせて中央寄せ） */
+.container {
+    max-width: 1200px; /* コンテンツの最大幅 */
+}
+
+/* ヘッダーのロゴとナビゲーションの間のスペース調整（Tailwindでflex justify-betweenを使用していますが、微調整が必要な場合） */
+/*header .container {
+    /* paddingなどがTailwindで設定されているため、ここでは追加のスタイルは最小限に
+}*/
+
+/* サイドバーのカテゴリリストのスタイル */
+aside nav ul li a {
+    transition: background-color 0.2s ease-in-out; /* ホバー時のトランジション */
+}
+
+/* アクティブなカテゴリリンクのスタイル（例：「すべて」） */
+aside nav ul li a.bg-blue-500 {
+    font-weight: 500; /* 少し太字に */
+}
+
+/* お知らせアイテムの下線とパディング */
+article {
+    border-bottom-color: #e5e7eb; /* Tailwindのborder-bと同じような色 */
+}
+
+/* ページネーションのリンクスタイル */
+nav.flex.space-x-2 a {
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* ホバー時のトランジション */
+}
+
+/* TOPに戻るボタンのスタイル */
+.container a.bg-blue-700 {
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* ホバー時のトランジション */
+}
+
+/* フッターのスタイル */
+footer {
+    /* Tailwindのbg-gray-800やtext-gray-300を使用していますが、追加のスタイルが必要な場合 */
+}
+
+footer a {
+    transition: color 0.2s ease-in-out; /* ホバー時のトランジション */
+}
+
+/* レスポンシブデザインの調整（必要に応じてブレークポイントごとにスタイルを調整） */
+@media (max-width: 768px) {
+    main.flex-col.md\:flex-row {
+        flex-direction: column; /* 画面が狭い場合は縦並びに */
+    }
+
+    aside.md\:w-1\/4 {
+        width: 100%; /* サイドバーを全幅に */
+        margin-bottom: 1.5rem; /* 下に余白を追加 */
+        padding-right: 0; /* 右のパディングをなくす */
+    }
+
+    section.md\:w-3\/4 {
+        width: 100%; /* お知らせリストを全幅に */
+    }
+
+    header .container,
+    footer .container {
+        flex-direction: column; /* ヘッダーとフッターの要素を縦並びに */
+        text-align: center; /* テキストを中央寄せ */
+    }
+
+    header nav ul,
+    footer nav ul {
+        flex-direction: column; /* ナビゲーションリンクを縦並びに */
+        align-items: center; /* 中央寄せ */
+        /*space-x: 0; /* 横方向のスペースをなくす */
+        margin-top: 1rem; /* 上に余白を追加 */
+    }
+
+    header nav ul li,
+    footer nav ul li {
+        margin-bottom: 0.5rem; /* 下に余白を追加 */
+    }
+}

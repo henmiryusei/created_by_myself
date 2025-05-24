@@ -1,0 +1,407 @@
+@charset "UTF-8";
+
+/* Basic Reset and Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif; /* フォントを調整してください */
+    line-height: 1.6;
+    color: #333; /* テキストの色を調整してください */
+    background-color: #fff; /* 背景色を調整してください */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* リンクの色を調整してください */
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%; /* コンテナの幅を調整してください */
+    max-width: 1200px; /* 最大幅を設定 */
+    margin: 0 auto; /* 中央寄せ */
+    padding: 0 20px; /* 左右のパディング */
+}
+
+/* Header Styles */
+header {
+    background-color: #fff; /* 背景色を調整してください */
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影を調整してください */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px; /* ロゴ画像の高さを調整してください */
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 30px; /* メニュー間の間隔を調整してください */
+}
+
+header nav ul li a {
+    color: #333; /* メニューテキストの色を調整してください */
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* ホバー時の下線の太さ */
+    background-color: #007bff; /* ホバー時の下線の色を調整してください */
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Page Title Styles */
+.page-title {
+    text-align: center;
+    padding: 60px 0 40px; /* 上下のパディングを調整してください */
+    position: relative;
+}
+
+.page-title h1 {
+    font-size: 2.5em; /* タイトル文字サイズを調整してください */
+    color: #555; /* タイトル文字色を調整してください */
+    margin-bottom: 20px;
+}
+
+.page-title::before,
+.page-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* 線の長さを調整してください */
+    height: 1px; /* 線の太さを調整してください */
+    background-color: #ccc; /* 線の色を調整してください */
+}
+
+.page-title::before {
+    top: 30px; /* 上の線の位置を調整してください */
+}
+
+.page-title::after {
+    bottom: 20px; /* 下の線の位置を調整してください */
+}
+
+
+/* Business List Styles */
+.business-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3列になるように調整 */
+    gap: 30px; /* アイテム間の間隔を調整してください */
+    padding: 40px 0;
+}
+
+.business-item {
+    border: 1px solid #ddd; /* 枠線の色を調整してください */
+    border-radius: 8px; /* 角の丸みを調整してください */
+    overflow: hidden; /* 画像が枠からはみ出さないように */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.business-item:hover {
+    transform: translateY(-5px); /* ホバー時の浮き上がり効果 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ホバー時の影 */
+}
+
+.business-image img {
+    width: 100%;
+    height: 200px; /* 画像の高さを固定する場合は指定 */
+    object-fit: cover; /* 画像をトリミングして表示 */
+}
+
+.business-details {
+    padding: 20px;
+    flex-grow: 1; /* 内容に応じて高さを調整 */
+    display: flex;
+    flex-direction: column;
+}
+
+.business-details .category {
+    font-size: 0.9em;
+    color: #777; /* カテゴリの色を調整してください */
+    margin-bottom: 5px;
+}
+
+.business-details h2 {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    color: #555; /* タイトル色を調整してください */
+}
+
+.business-details h2 span {
+    display: block; /* 英語名を改行 */
+    font-size: 0.8em;
+    color: #888; /* 英語名の文字色を調整してください */
+    font-weight: normal;
+}
+
+.business-details .description {
+    font-size: 1em;
+    color: #666; /* 説明文の色を調整してください */
+    margin-bottom: 15px;
+    flex-grow: 1; /* 説明文が残りのスペースを使う */
+}
+
+.business-details .tag {
+    display: inline-block;
+    background-color: #9370db; /* タグの背景色を調整してください (薄紫色を想定) */
+    color: #fff; /* タグの文字色を調整してください */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-top: auto; /* 下部に配置 */
+    align-self: flex-start; /* 左寄せ */
+}
+
+
+/* Franchise Section Styles */
+.franchise-section {
+    padding: 60px 0;
+    border-top: 1px solid #eee; /* 上の線を調整してください */
+    border-bottom: 1px solid #eee; /* 下の線を調整してください */
+    margin-bottom: 40px;
+}
+
+.franchise-section h2 {
+    text-align: center;
+    font-size: 2em; /* タイトル文字サイズを調整してください */
+    color: #555; /* タイトル文字色を調整してください */
+    margin-bottom: 30px;
+}
+
+.franchise-section h2 span {
+    display: block;
+    font-size: 0.6em;
+    color: #888;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.franchise-content {
+    display: flex;
+    justify-content: space-around; /* 左右に均等に配置 */
+    gap: 40px; /* 間のスペース */
+    flex-wrap: wrap; /* 狭い画面で折り返す */
+}
+
+.franchise-recruitment,
+.franchise-existing {
+    flex-basis: 45%; /* 幅を調整してください */
+    min-width: 300px; /* 最小幅 */
+}
+
+.franchise-content h3 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ccc; /* 下線を調整してください */
+    padding-bottom: 10px;
+}
+
+.franchise-content ul {
+    padding-left: 20px; /* リストの左側の余白 */
+}
+
+.franchise-content li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.franchise-content li a {
+    color: #007bff; /* リンクの色を調整してください */
+}
+
+.franchise-content li a:hover {
+    text-decoration: underline;
+}
+
+/* External link icon - Using a simple unicode arrow */
+.franchise-content li a::after {
+    content: '\2197'; /* Unicode for North East Arrow */
+    margin-left: 5px;
+    font-size: 0.9em;
+    vertical-align: super; /* 少し上に表示 */
+}
+
+
+/* Back to Top Button Styles */
+.back-to-top {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.back-to-top a {
+    display: inline-block; /* ボタンのように表示 */
+    background-color: #007bff; /* ボタンの色を調整してください */
+    color: #fff; /* ボタンの文字色を調整してください */
+    padding: 10px 20px;
+    border-radius: 5px; /* 角の丸み */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    position: relative;
+    padding-left: 30px; /* アイコンのための左余白 */
+}
+
+.back-to-top a:hover {
+    background-color: #0056b3; /* ホバー時の色を調整してください */
+}
+
+/* Arrow icon for Back to Top */
+.back-to-top a::before {
+    content: '\2039'; /* Unicode for Single Left-Pointing Angle Quotation Mark */
+     /* You could also use '\25C0' (Black Left-Pointing Triangle) or an icon font like Font Awesome */
+    position: absolute;
+    left: 10px; /* 位置を調整してください */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #333; /* 背景色を調整してください */
+    color: #fff; /* 文字色を調整してください */
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column; /* 縦に並べる（狭い画面対応） */
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 50px; /* フッターロゴの高さを調整してください */
+    margin-bottom: 20px;
+}
+
+.footer-address p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    color: #ccc; /* 住所の色を調整してください */
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* 幅を100%にして左右に配置 */
+    max-width: 600px; /* 最大幅 */
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #555; /* 上の線を調整してください */
+    font-size: 0.9em;
+    color: #ccc; /* 文字色を調整してください */
+}
+
+.footer-bottom a {
+    color: #ccc; /* リンクの色を調整してください */
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive Adjustments (Optional but recommended) */
+@media (max-width: 992px) {
+    .business-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 列数を調整 */
+    }
+
+    header .container {
+         flex-direction: column; /* ヘッダーを縦並びに */
+    }
+    header nav ul {
+        margin-top: 15px;
+    }
+    header nav ul li {
+        margin: 0 10px; /* 間隔を調整 */
+    }
+
+     .franchise-content {
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: center;
+    }
+
+    .franchise-recruitment,
+    .franchise-existing {
+        flex-basis: 100%; /* 幅を100%に */
+        margin-bottom: 30px; /* 下に余白 */
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* 縦並びに */
+        align-items: center;
+    }
+     .footer-bottom p {
+         margin-bottom: 10px;
+     }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 10px; /* 狭い画面での左右パディング */
+    }
+
+    .page-title h1 {
+        font-size: 1.8em; /* タイトル文字サイズを小さく */
+    }
+
+    .business-details h2 {
+        font-size: 1.2em;
+    }
+
+    header nav ul {
+        flex-wrap: wrap; /* メニューが折り返すように */
+        justify-content: center;
+    }
+     header nav ul li {
+         margin: 5px 8px;
+     }
+
+    .franchise-section h2 {
+        font-size: 1.6em;
+    }
+
+    .franchise-content h3 {
+        font-size: 1.3em;
+    }
+}
